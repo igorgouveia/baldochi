@@ -1,0 +1,13 @@
+.nav{ 
+    background-color: blanchedalmond;
+    height: 40px; 
+    margin-top: -20px
+}
+.button-right{
+    float: right;
+    margin-top: -50px
+}
+h2{
+    padding-top: 3px;
+    padding-left: 3px;
+}
