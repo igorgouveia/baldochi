@@ -19,6 +19,9 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { GridSearchComponent } from './grid-search/grid-search.component';
 import { FormsModule } from '@angular/forms';
 import { GridCategoryComponent } from './grid-category/grid-category.component';
+import { AutorComponent } from './autor/autor.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { BookAutorComponent } from './book-autor/book-autor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { GridCategoryComponent } from './grid-category/grid-category.component';
     ProductDetailComponent,
     ProductImageModalComponent,
     GridSearchComponent,
-    GridCategoryComponent
+    GridCategoryComponent,
+    AutorComponent,
+    AboutUsComponent,
+    BookAutorComponent
   ],
   imports: [
     BrowserModule,

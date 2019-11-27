@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ProductImageModalComponent } from '../product-image-modal/product-image-modal.component';
+import { AppHomeComponent } from '../app-home/app-home.component';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -8,7 +9,7 @@ import { ProductImageModalComponent } from '../product-image-modal/product-image
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private home: AppHomeComponent) {
   }
 
   openDialog(): void {
@@ -25,5 +26,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  viewBooks(autorId){
+    this.home.goBookAutor(autorId);
+  }
 }

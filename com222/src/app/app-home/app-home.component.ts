@@ -12,8 +12,12 @@ export class AppHomeComponent implements OnInit {
  productDetail = false;
  gridSearch = false;
  gridCategory = false;
+ autor = false;
+ aboutUs = false;
+ bookAutor = false;
  searchPass = '';
  categoryId = 0;
+ autorId = 0;
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +28,9 @@ export class AppHomeComponent implements OnInit {
     this.homeGrid = false;
     this.gridSearch = false; 
     this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
     this.productDetail = true;
   }
 
@@ -32,6 +39,9 @@ export class AppHomeComponent implements OnInit {
     this.productDetail = false;
     this.homeGrid = false;
     this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
     this.gridSearch = true;
   }
 
@@ -40,7 +50,51 @@ export class AppHomeComponent implements OnInit {
     this.productDetail = false;
     this.homeGrid = false;
     this.gridCategory = true;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
     this.gridSearch = false;
+  }
+
+  goHome(){
+    this.homeGrid = true;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
+    this.productDetail = false;
+  }
+
+  goAutor(){
+    this.homeGrid = false;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = true; 
+    this.aboutUs = false;
+    this.bookAutor = false;
+    this.productDetail = false;
+  }
+
+  goBookAutor(autorId : number){
+    this.autorId = autorId;
+    this.homeGrid = false;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = true;
+    this.productDetail = false;
+  }
+
+  goAboutUs(){
+    this.homeGrid = false;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = true;
+    this.bookAutor = false;
+    this.productDetail = false;
   }
 
 }

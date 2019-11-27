@@ -1,5 +1,5 @@
 <div class='nav'>
-    <h2>Books Mall</h2>
+    <h2 (click)='goHome()'>Books Mall</h2>
     <div class="button-right">
         <button mat-button>
             <i class="material-icons">shopping_cart</i> Carrinho</button>
@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<mat-grid-list cols="4" rowHeight="100px">
+<mat-grid-list cols="4" style="background-color:#ffdd00;" rowHeight="100px">
     <mat-grid-tile [colspan]="1" [rowspan]="1">
         <button mat-button [matMenuTriggerFor]="category"><i class="material-icons">view_headline</i>Categorias</button>
         <mat-menu #category="matMenu">

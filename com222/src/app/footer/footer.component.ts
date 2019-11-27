@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppHomeComponent } from '../app-home/app-home.component';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private home: AppHomeComponent) { }
   ngOnInit() {
   }
-
+  goHome() {
+    this.home.goHome();
+  }
+  goAutor() {
+    this.home.goAutor();
+  }
+  goAboutUs() {
+    this.home.goAboutUs();
+  }
 }

@@ -9,14 +9,14 @@ import { AppHomeComponent } from '../app-home/app-home.component';
 export class NavBarComponent implements OnInit {
   searchPass = "";
   constructor(private home: AppHomeComponent) { }
-
-  ngOnInit() {
+  ngOnInit(): void {
   }
-
+  goHome() {
+    this.home.goHome();
+  }
   searchProduct() {
     this.home.searchProduct(this.searchPass);
   }
-
   searchCategory(categoryId: number) {
     this.home.searchCategory(categoryId);
   }
