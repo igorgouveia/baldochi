@@ -3,15 +3,17 @@ import { AppHomeComponent } from '../app-home/app-home.component';
 import { BooksApiService } from '../api/books-api.service';
 
 @Component({
-  selector: 'nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  selector: 'app-shopping-cart',
+  templateUrl: './shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.css']
 })
-export class NavBarComponent implements OnInit {
+export class ShoppingCartComponent implements OnInit {
   searchPass = "";
   public listCategories;
   constructor(private home: AppHomeComponent,
               private bookApiService: BooksApiService, ) { }
+
+  constructor() { }
 
   ngOnInit(): void {
     this.getListCategories()
@@ -31,16 +33,7 @@ export class NavBarComponent implements OnInit {
     this.home.goHome();
   }
 
-  goShoppingCart() {
-    this.home.goShoppingCart();
+  goConfirm() {
+    this.home.goConfirm();
   }
-
-  searchProduct() {
-    this.home.searchProduct(this.searchPass);
-  }
-
-  searchCategory(categoryId: number) {
-    this.home.searchCategory(categoryId);
-  }
-
 }

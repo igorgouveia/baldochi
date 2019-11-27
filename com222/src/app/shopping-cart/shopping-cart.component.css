@@ -1,0 +1,77 @@
+
+.carrinho {
+	border-collapse: collapse;
+	width: 75%;
+	font-size: 16px;
+}
+
+.confirm{
+	margin-top: 30px;
+	border: 2px solid #333;
+	font-weight: 800;
+}
+
+
+th{
+	font-size: 18px;
+	background-color: #ffdd00;
+	color: #222;
+}
+th, td {
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+	text-align:center;
+}
+
+tr:hover {
+	background-color:#f5f5f5;
+	transition: .2s all linear;
+}
+
+.price{
+	background-color: #FFF8A0; 
+	font-weight: 700;
+}
+
+.remove-btn {
+	background-color: #FF322B;
+	border: 2px solid #444;
+	border-radius: 100%;
+	color: #444;
+	padding: 4px 11px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.remove-btn:hover{
+	color: white;
+	background-color: #FF1400;
+	transition: .18s all linear;
+	border: 2px solid #FF322B;
+}
+
+
+.btn{
+	background-color: #ffdd00;
+	border: 2px solid #333;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.btn:hover{
+	background-color: #FFF8A0;
+	transition: .18s all linear;
+}
+
+.continuar{
+	border-bottom: 2px solid #ffdd00;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.continuar:hover{
+	font-weight: 500;
+	transition: .3s all linear;
+}

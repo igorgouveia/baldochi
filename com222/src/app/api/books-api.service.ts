@@ -31,7 +31,7 @@ export class BooksApiService {
   }
 
   getBookRandom() {
-    return this.httpClient.get(`${ApiUrl}/bookdescriptions/random/books`).toPromise();
+    return this.httpClient.get(`${ApiUrl}/bookdescriptions/random`).toPromise();
   }
 
   getBookAuthor(authorId) {

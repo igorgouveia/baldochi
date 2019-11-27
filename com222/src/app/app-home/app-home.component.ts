@@ -15,6 +15,9 @@ export class AppHomeComponent implements OnInit {
  autor = false;
  aboutUs = false;
  bookAutor = false;
+ shoppingCart = false;
+ confirm = false;
+ userData = false;
  searchPass = '';
  categoryId = 0;
  autorId = 0;
@@ -34,6 +37,10 @@ export class AppHomeComponent implements OnInit {
     this.aboutUs = false;
     this.bookAutor = false;
     this.productDetail = true;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
   }
 
   searchProduct(searchPass:string){    
@@ -45,6 +52,10 @@ export class AppHomeComponent implements OnInit {
     this.aboutUs = false;
     this.bookAutor = false;
     this.gridSearch = true;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
   }
 
   searchCategory(categoryId: number){    
@@ -56,6 +67,11 @@ export class AppHomeComponent implements OnInit {
     this.aboutUs = false;
     this.bookAutor = false;
     this.gridSearch = false;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
+
   }
 
   goHome(){
@@ -66,6 +82,10 @@ export class AppHomeComponent implements OnInit {
     this.aboutUs = false;
     this.bookAutor = false;
     this.productDetail = false;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
   }
 
   goAutor(){
@@ -76,6 +96,10 @@ export class AppHomeComponent implements OnInit {
     this.aboutUs = false;
     this.bookAutor = false;
     this.productDetail = false;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
   }
 
   goBookAutor(autorId : number){
@@ -87,6 +111,10 @@ export class AppHomeComponent implements OnInit {
     this.aboutUs = false;
     this.bookAutor = true;
     this.productDetail = false;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
   }
 
   goAboutUs(){
@@ -97,6 +125,66 @@ export class AppHomeComponent implements OnInit {
     this.aboutUs = true;
     this.bookAutor = false;
     this.productDetail = false;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
+  }
+
+  goShoppingCart(){
+    this.homeGrid = false;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
+    this.productDetail = false;
+    this.shoppingCart = true;
+    this.confirm = false;
+    this.userData = false;
+    this.history = false;
+  }
+
+  goConfirm(){
+    this.homeGrid = false;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
+    this.productDetail = false;
+    this.shoppingCart = false;
+    this.confirm = true;
+    this.userData = false;
+    this.history = false;
+  }
+
+  goUserData(){
+    this.homeGrid = false;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
+    this.productDetail = false;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = true;
+    this.history = false;
+  }
+
+  goHistory(){
+    this.homeGrid = false;
+    this.gridSearch = false; 
+    this.gridCategory = false;
+    this.autor = false; 
+    this.aboutUs = false;
+    this.bookAutor = false;
+    this.productDetail = false;
+    this.shoppingCart = false;
+    this.confirm = false;
+    this.userData = false;
+    this.history = true;
   }
 
 }

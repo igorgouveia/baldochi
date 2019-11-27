@@ -1,8 +1,9 @@
 <div class='nav'>
     <h2 (click)='goHome()'>Books Mall</h2>
     <div class="button-right">
-        <button mat-button>
-            <i class="material-icons">shopping_cart</i> Carrinho</button>
+        <button mat-button (click)="goShoppingCart()">
+            <i class="material-icons" >shopping_cart</i> Carrinho
+        </button>
         <button mat-button [matMenuTriggerFor]="menu"><i class="material-icons">face</i> Minha Conta</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item>Item 1</button>
