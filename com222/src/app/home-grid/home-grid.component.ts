@@ -19,7 +19,7 @@ export class HomeGridComponent implements OnInit {
   }
 
   getListBooks() {
-    this.bookApiService.getBooks()
+    this.bookApiService.getBookRandom()
       .then((books) => {
         this.listBooks = books;
         console.log(this.listBooks);

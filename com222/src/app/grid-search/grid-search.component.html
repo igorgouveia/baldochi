@@ -12,8 +12,7 @@
                     alt="{{book.title}}">
             </div>
             <mat-card-content>
-                <p>
-                    <!-- {{book.description}} -->
+                <p [innerHTML] = 'book.description'>
                 </p>
             </mat-card-content>
             <h3 align='center'>Preço: R$ {{book.price}}</h3>
