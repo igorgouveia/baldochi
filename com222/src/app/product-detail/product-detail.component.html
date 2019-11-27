@@ -1,26 +1,24 @@
-<mat-card class="example-card">
+<mat-card class="example-card" *ngFor='let book of listBooks'>
     <mat-grid-list cols="4" rowHeight="100px">
-        <mat-grid-tile [colspan]="2" [rowspan]="4">
+        <mat-grid-tile [colspan]="2" [rowspan]="8">
             <mat-card-content>
-                <h2>Titulo do Livro</h2>
-                <h3 (click)="viewBooks(1)">Autor do Livro</h3>
-                <h3>Preço: R$ 30.00</h3>
-                <h4>ISBN</h4>
-                <h4>Edição: 5</h4>
-                <h4>Numero de paginas: 5000</h4>
-                <h4>Data de Publicacao: 20/11/2019</h4>
-                <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
+                <h2>{{book.title}}</h2>
+                <h4>{{book.ISBN}}</h4>
+                <h3 (click)="viewBooks(book.AuthorID)">Autor: {{book.nameF}} {{book.nameL}}</h3>
+                <h3>Preço: R$ {{book.price}}</h3>
+                <h4>Edição: {{book.edition}}</h4>
+                <h4>Editora: {{book.publisher}}</h4>
+                <h4>Numero de paginas: {{book.pages}}</h4>
+                <h4>Data de Publicacao: {{book.pubdate}}</h4>
+                <p [innerHTML] = 'book.description'>
                 </p>
             </mat-card-content>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2" [rowspan]="4">
             <div align='center'>
-                <img (click)='openDialog()' mat-card-md-image
-                    src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/0131428985.01.LZZZZZZZ.jpg"
-                    alt="Photo of a Shiba Inu">
+                <img (click)='openDialog(book.ISBN)' mat-card-md-image
+                    src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/{{book.ISBN}}.01.MZZZZZZZ.jpg"
+                    alt="{{book.title}}">
             </div>
         </mat-grid-tile>
     </mat-grid-list>

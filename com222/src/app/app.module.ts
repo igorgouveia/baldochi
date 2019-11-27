@@ -22,6 +22,7 @@ import { GridCategoryComponent } from './grid-category/grid-category.component';
 import { AutorComponent } from './autor/autor.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BookAutorComponent } from './book-autor/book-autor.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BookAutorComponent } from './book-autor/book-autor.component';
     MatGridListModule,
     MatCardModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [,
     MatDialog, MatDialogModule, AppHomeComponent],

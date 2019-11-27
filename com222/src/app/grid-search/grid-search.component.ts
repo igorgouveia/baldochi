@@ -1,11 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppHomeComponent } from '../app-home/app-home.component';
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
+import { BooksApiService } from '../api/books-api.service';
+
 @Component({
   selector: 'app-grid-search',
   templateUrl: './grid-search.component.html',
@@ -13,24 +9,32 @@ export interface Tile {
 })
 export class GridSearchComponent implements OnInit {
   @Input() searchPass;
-  tiles: Tile[] = [
-    { text: 'fdsfdsfdsfsdfsd', cols: 1, rows: 4, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 4, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 4, color: 'lightpink' },
-    { text: 'Four', cols: 1, rows: 4, color: '#DDBDF1' },
-    { text: 'One', cols: 1, rows: 4, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 4, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 4, color: 'lightpink' },
-    { text: 'Four', cols: 1, rows: 4, color: '#DDBDF1' },
-  ];
+  listBooks: any;
   constructor(
-    private home: AppHomeComponent
+    private home: AppHomeComponent,
+    private bookApiService: BooksApiService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getListBooks()
   }
 
-  viewProduct() {
-    this.home.viewProduct();
+  getListBooks() {
+    this.bookApiService.getBooks()
+      .then((books) => {
+        this.listBooks = books;
+        this.listBooks = Object.assign([], this.listBooks).filter(
+          item => item.title.toLowerCase().indexOf(this.searchPass.toLowerCase()) > -1 || item.ISBN.toLowerCase().indexOf(this.searchPass.toLowerCase()) > -1
+        )
+      }).catch((error) => {
+        console.log({ error });
+      });
+    
   }
+
+  viewProduct(ISBN: number) {
+    this.home.viewProduct(ISBN);
+  }
+
+
 }

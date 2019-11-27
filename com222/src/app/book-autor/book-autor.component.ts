@@ -1,11 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppHomeComponent } from '../app-home/app-home.component';
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
+import { BooksApiService } from '../api/books-api.service';
+
 @Component({
   selector: 'app-book-autor',
   templateUrl: './book-autor.component.html',
@@ -13,24 +9,39 @@ export interface Tile {
 })
 export class BookAutorComponent implements OnInit {
   @Input() autorId;
-  tiles: Tile[] = [
-    { text: 'fdsfdsfdsfsdfsd', cols: 1, rows: 4, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 4, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 4, color: 'lightpink' },
-    { text: 'Four', cols: 1, rows: 4, color: '#DDBDF1' },
-    { text: 'One', cols: 1, rows: 4, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 4, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 4, color: 'lightpink' },
-    { text: 'Four', cols: 1, rows: 4, color: '#DDBDF1' },
-  ];
+  listBooks:any;
+  author: any;
   constructor(
-    private home: AppHomeComponent
+    private home: AppHomeComponent,
+    private bookApiService: BooksApiService,
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getAuthor();
+    this.getListBooks()
   }
 
-  viewProduct() {
-    this.home.viewProduct();
+  getListBooks() {
+    this.bookApiService.getBookAuthor(this.autorId)
+      .then((books) => {
+        this.listBooks = books;
+        console.log(this.listBooks);
+      }).catch((error) => {
+        console.log({ error });
+      });
+  }
+
+  getAuthor() {
+    this.bookApiService.getAuthor(this.autorId)
+      .then((author) => {
+        this.author = author;
+        console.log(this.author);
+      }).catch((error) => {
+        console.log({ error });
+      });
+  }
+
+  viewProduct(ISBN: number) {
+    this.home.viewProduct(ISBN);
   }
 }

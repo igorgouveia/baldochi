@@ -1,6 +1,6 @@
 <nav-bar></nav-bar>
 <app-home-grid *ngIf="homeGrid"></app-home-grid>
-<app-product-detail *ngIf="productDetail"></app-product-detail>
+<app-product-detail [ISBN] = 'ISBN' *ngIf="productDetail"></app-product-detail>
 <app-grid-search [searchPass] = 'searchPass'  *ngIf="gridSearch"></app-grid-search>
 <app-grid-category [categoryId] = 'categoryId'  *ngIf="gridCategory"></app-grid-category>
 <app-autor *ngIf="autor"></app-autor>

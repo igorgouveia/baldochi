@@ -1,25 +1,23 @@
 <mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="1" [rowspan]="4">
+    <mat-grid-tile *ngFor="let book of listBooks | slice:0:4;" [colspan]="1" [rowspan]="5">
         <mat-card  class="example-card">
             <mat-card-header>
-                <mat-card-title>Titulo do Livro</mat-card-title>
-                <mat-card-subtitle>ISBN</mat-card-subtitle>
+                <mat-card-title>{{book.title}}</mat-card-title>
+                <mat-card-subtitle>{{book.ISBN}}</mat-card-subtitle>
             </mat-card-header>
             <div align='center'>
-                <img (click)="viewProduct()" mat-card-md-image
-                    src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/0131428985.01.THUMBZZZ.jpg"
-                    alt="Photo of a Shiba Inu">
+                <img (click)="viewProduct(book.ISBN)" mat-card-md-image
+                    src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/{{book.ISBN}}.01.THUMBZZZ.jpg"
+                    alt="{{book.title}}">
             </div>
             <mat-card-content>
                 <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
+                    <!-- {{book.description}} -->
                 </p>
             </mat-card-content>
-            <h3 align='center'>Preço: R$ 30.00</h3>
+            <h3 align='center'>Preço: R$ {{book.price}}</h3>
             <mat-card-actions align='center'>
-                <button mat-button (click)="viewProduct()">Veja mais detalhes</button>
+                <button mat-button (click)="viewProduct(book.ISBN)">Veja mais detalhes</button>
             </mat-card-actions>
         </mat-card>
     </mat-grid-tile>

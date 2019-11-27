@@ -15,8 +15,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1">
         <button mat-button [matMenuTriggerFor]="category"><i class="material-icons">view_headline</i>Categorias</button>
         <mat-menu #category="matMenu">
-            <button mat-menu-item (click)='searchCategory(1)' >Item 1</button>
-            <button mat-menu-item (click)='searchCategory(2)'>Item 2</button>
+            <button *ngFor='let categorie of listCategories' mat-menu-item (click)='searchCategory(categorie.CategoryID)' >{{categorie.CategoryName}}</button>
         </mat-menu>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="2" [rowspan]="1">

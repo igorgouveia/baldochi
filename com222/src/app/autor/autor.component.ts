@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppHomeComponent } from '../app-home/app-home.component';
+import { BooksApiService } from '../api/books-api.service';
 export interface Tile {
   color: string;
   cols: number;
@@ -12,17 +13,23 @@ export interface Tile {
   styleUrls: ['./autor.component.css']
 })
 export class AutorComponent implements OnInit {
-  tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 4, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 4, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 4, color: 'lightpink'},
-    {text: 'Four', cols: 1, rows: 4, color: '#DDBDF1'},
-  ];
-  constructor( private home: AppHomeComponent) { }
-
-  ngOnInit() {
-  }
+  listAuthor: any;
+  constructor( private home: AppHomeComponent,
+              private bookApiService: BooksApiService,
+    ) { }
   
+    ngOnInit(): void {
+      this.getAuthors();
+    }  
+    getAuthors() {
+      this.bookApiService.getAuthors()
+        .then((author) => {
+          this.listAuthor = author;
+          console.log(this.listAuthor);
+        }).catch((error) => {
+          console.log({ error });
+        });
+    }
   viewBooks(autorId){
     this.home.goBookAutor(autorId);
   }

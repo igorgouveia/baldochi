@@ -18,13 +18,15 @@ export class AppHomeComponent implements OnInit {
  searchPass = '';
  categoryId = 0;
  autorId = 0;
+ ISBN = null;
   constructor() { }
 
   ngOnInit() {
     this.homeGrid = true;
   }
 
-  viewProduct(){
+  viewProduct(ISBN: number){
+    this.ISBN = ISBN;
     this.homeGrid = false;
     this.gridSearch = false; 
     this.gridCategory = false;
