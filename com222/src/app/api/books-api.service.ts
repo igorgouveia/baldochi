@@ -46,5 +46,31 @@ export class BooksApiService {
     return this.httpClient.get(`${ApiUrl}/bookauthors/${authorId}`).toPromise();
   }
   
+  verifyUser(email) {
+    return this.httpClient.get(`${ApiUrl}/customers/${email}`).toPromise();
+  }
+
+  updateUser(user, CustID) {
+    return this.httpClient.patch(`${ApiUrl}/customers/${CustID}`, user ).toPromise();
+  }
+  createUser(user) {
+    return this.httpClient.post(`${ApiUrl}/customers`, user ).toPromise();
+  }
+
+  createOrder(CustID) {
+    let json = {
+      'custID': CustID,
+      'orderdate': 20191127
+    }
+    return this.httpClient.post(`${ApiUrl}/bookorders`, json ).toPromise();
+  }
+  getOrder(custID) {
+    return this.httpClient.get(`${ApiUrl}/bookorders/${custID}`).toPromise();
+  }
+
+  createOrderItem(json) {
+    return this.httpClient.post(`${ApiUrl}/bookorderitems`, json).toPromise();
+  }
+ 
 
 }

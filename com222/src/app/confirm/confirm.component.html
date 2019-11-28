@@ -7,9 +7,9 @@
 	
 	<form action="action_page.php">
 
-		<input type="text" id="fname" name="firstname" placeholder="Entre com o e-mail">
+	<input type="text" id="fname" name="firstname" [(ngModel)] = 'email' placeholder="Entre com o e-mail">
 
-		<input type="button" class="btn" align="center" value="Autenticar" (click)="goUserData()">
+		<input type="button" class="btn" align="center" value="Autenticar" (click)="verifyEmail()">
 
 	</form>
 </div>

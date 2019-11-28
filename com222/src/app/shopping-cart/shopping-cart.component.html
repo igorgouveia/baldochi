@@ -11,12 +11,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td><img src="" width="50" alt="Avatar"></td>
-			<td>Livro 1</td>
-			<td>$37.50</td>
-			<td>2x</td>
-			<td class="price">$75.00</td>
+		<tr *ngFor = "let cart of shoppingBook">
+			<td><img src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/{{cart.ISBN}}.01.MZZZZZZZ.jpg" width="50" alt="Avatar"></td>
+			<td>{{cart.title}}</td>
+			<td>{{cart.price}}</td>
+			<td>{{cart.qty}}</td>
+			<td class="price">{{cart.totalPrice}}</td>
 			<td><input type="button" class="remove-btn" value="x"></td>
 		</tr>
 
@@ -29,7 +29,7 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>$150.00</td>
+			<td>R$ {{totalCart}}</td>
 		</tr>
 	</tbody>
 </table>

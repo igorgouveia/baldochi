@@ -43,4 +43,7 @@ export class ProductDetailComponent implements OnInit {
   viewBooks(autorId){
     this.home.goBookAutor(autorId);
   }
+  addCart(book){
+    this.home.addCart(book);
+  }
 }

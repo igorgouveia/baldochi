@@ -8,26 +8,17 @@ import { BooksApiService } from '../api/books-api.service';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
+  shoppingBook = [];
+  totalCart = 0;
   searchPass = "";
   public listCategories;
   constructor(private home: AppHomeComponent,
-              private bookApiService: BooksApiService, ) { }
-
-  constructor() { }
-
+    private bookApiService: BooksApiService, ) { }
   ngOnInit(): void {
-    this.getListCategories()
+    this.shoppingBook = this.home.shoppingBook;
+    this.totalCart = this.home.totalCart;
   }
 
-  getListCategories() {
-    this.bookApiService.getCategories()
-      .then((categories) => {
-        this.listCategories = categories;
-        console.log(this.listCategories);
-      }).catch((error) => {
-        console.log({ error });
-      });
-  }
 
   goHome() {
     this.home.goHome();

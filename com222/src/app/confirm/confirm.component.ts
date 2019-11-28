@@ -8,29 +8,28 @@ import { BooksApiService } from '../api/books-api.service';
   styleUrls: ['./confirm.component.css']
 })
 export class ConfirmComponent implements OnInit {
-  searchPass = "";
+  email = "";
+  user = null;
   public listCategories;
-  constructor(private home: AppHomeComponent,
-              private bookApiService: BooksApiService, ) { }
 
-  constructor() { }
+  constructor(private home: AppHomeComponent,
+    private bookApiService: BooksApiService) { }
 
   ngOnInit(): void {
-    this.getListCategories()
   }
 
-  getListCategories() {
-    this.bookApiService.getCategories()
-      .then((categories) => {
-        this.listCategories = categories;
-        console.log(this.listCategories);
+  verifyUser() {
+    this.bookApiService.verifyUser(this.email)
+      .then((user) => {
+        this.user = user;
+        this.home.goUserData(this.user);
       }).catch((error) => {
         console.log({ error });
       });
   }
-  
-   goUserData() {
-    this.home.goUserData();
+
+  verifyEmail() {
+    this.verifyUser();
   }
 
 }

@@ -5,8 +5,8 @@
 <app-grid-category [categoryId] = 'categoryId'  *ngIf="gridCategory"></app-grid-category>
 <app-shopping-cart *ngIf="shoppingCart"></app-shopping-cart>	
 <app-confirm *ngIf="confirm"></app-confirm>
-<app-user-data *ngIf="userData"></app-user-data>
-<app-history *ngIf="history"></app-history>
+<app-user-data [user]='user' *ngIf="userData"></app-user-data>
+<app-history [custID]='custID' *ngIf="history"></app-history>
 <app-autor *ngIf="autor"></app-autor>
 <app-about-us *ngIf="aboutUs"></app-about-us>
 <app-book-autor *ngIf="bookAutor" [autorId] = 'autorId'></app-book-autor>
