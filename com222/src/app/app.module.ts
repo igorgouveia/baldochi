@@ -22,7 +22,11 @@ import { GridCategoryComponent } from './grid-category/grid-category.component';
 import { AutorComponent } from './autor/autor.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BookAutorComponent } from './book-autor/book-autor.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { UserDataComponent } from './user-data/user-data.component';
+import { HistoryComponent } from './history/history.component'; 
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { HttpClientModule } from '@angular/common/http';
     GridCategoryComponent,
     AutorComponent,
     AboutUsComponent,
-    BookAutorComponent
+    BookAutorComponent,
+    ShoppingCartComponent,
+    ConfirmComponent,
+    UserDataComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -31,6 +31,13 @@ export class NavBarComponent implements OnInit {
     this.home.goHome();
   }
 
+  goShoppingCart() {
+    this.home.goShoppingCart();
+  }
+  goHistory() {
+    this.home.goHistory();
+  }
+
   searchProduct() {
     this.home.searchProduct(this.searchPass);
   }

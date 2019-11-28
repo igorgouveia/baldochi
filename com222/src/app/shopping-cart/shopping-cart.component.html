@@ -1,0 +1,38 @@
+<h2 align="center">Lista de produtos</h2>
+<table class="carrinho" align="center" style="padding-top:40px;">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Item</th>
+			<th>Preço (un.)</th>
+			<th>Quantidade</th>
+			<th>PREÇO</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor = "let cart of shoppingBook">
+			<td><img src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/{{cart.ISBN}}.01.MZZZZZZZ.jpg" width="50" alt="Avatar"></td>
+			<td>{{cart.title}}</td>
+			<td>{{cart.price}}</td>
+			<td>{{cart.qty}}</td>
+			<td class="price">{{cart.totalPrice}}</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<table class="confirm" align="center">
+	<thead>
+		<th>PREÇO FINAL</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>R$ {{totalCart}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<div align="center" style="padding-top:30px;">
+	<input type="button" class="btn" align="center" value="Concluir pedido" (click)="goConfirm()">
+	<a class="continuar" align="center" (click)="goHome()">Continuar comprando</a>
+</div>

@@ -1,0 +1,22 @@
+<h2 align="center">Agradecemos sua preferência!</h2>
+<h2 align="center">Histórico de compras</h2>
+<table class="carrinho" align="center" style="padding-top:40px; margin-bottom: 50px">
+	<thead>
+		<tr>
+			<th>Códido pedido</th>
+			<th>Data</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor='let order of order'>
+			<td>{{order.orderID}}</td>
+			<td>{{order.orderdate}}</td>
+		</tr>
+
+	</tbody>
+</table>
+
+
+
+
+
