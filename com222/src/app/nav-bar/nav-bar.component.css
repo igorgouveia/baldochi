@@ -1,0 +1,14 @@
+.nav{ 
+    background-color:black;
+    height: 40px; 
+    margin-top: -20px;
+    color: #ffdd00;
+}
+.button-right{
+    float: right;
+    margin-top: -50px
+}
+h2{
+    padding-top: 3px;
+    padding-left: 3px;
+}

@@ -1,0 +1,28 @@
+<div class='nav'>
+    <h2 (click)='goHome()'>Books Mall</h2>
+    <div class="button-right">
+        <button mat-button>
+            <i class="material-icons">shopping_cart</i> Carrinho</button>
+        <button mat-button [matMenuTriggerFor]="menu"><i class="material-icons">face</i> Minha Conta</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    </div>
+</div>
+
+<mat-grid-list cols="4" style="background-color:#ffdd00;" rowHeight="100px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-button [matMenuTriggerFor]="category"><i class="material-icons">view_headline</i>Categorias</button>
+        <mat-menu #category="matMenu">
+            <button *ngFor='let categorie of listCategories' mat-menu-item (click)='searchCategory(categorie.CategoryID)' >{{categorie.CategoryName}}</button>
+        </mat-menu>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-form-field style="width: 100%">
+            <input matInput type="search" [(ngModel)]="searchPass" placeholder="Digite o Livro desejado">
+        </mat-form-field>
+        <button mat-button [disabled] = '!searchPass' (click)='searchProduct()' >Pesquisar<i class="material-icons">search</i></button>
+    </mat-grid-tile>
+   
+</mat-grid-list>

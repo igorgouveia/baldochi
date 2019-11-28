@@ -1,0 +1,12 @@
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile *ngFor="let author of listAuthor" [colspan]="1" [rowspan]="2">
+        <mat-card  class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{author.nameF}} {{author.nameL}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions align='center'>
+                <button mat-button (click)="viewBooks(author.AuthorID)">Veja mais detalhes</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

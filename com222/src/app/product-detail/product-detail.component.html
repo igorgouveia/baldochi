@@ -1,0 +1,28 @@
+<mat-card class="product" *ngFor='let book of listBooks'>
+    <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile [colspan]="2" [rowspan]="8">
+            <mat-card-content>
+                <h2>{{book.title}}</h2>
+                <h4>{{book.ISBN}}</h4>
+                <h3 (click)="viewBooks(book.AuthorID)">Autor: {{book.nameF}} {{book.nameL}}</h3>
+                <h3>Preço: R$ {{book.price}}</h3>
+                <h4>Edição: {{book.edition}}</h4>
+                <h4>Editora: {{book.publisher}}</h4>
+                <h4>Numero de paginas: {{book.pages}}</h4>
+                <h4>Data de Publicacao: {{book.pubdate}}</h4>
+                <p [innerHTML] = 'book.description'>
+                </p>
+            </mat-card-content>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="4">
+            <div align='center'>
+                <img (click)='openDialog(book.ISBN)' mat-card-md-image
+                    src="https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/{{book.ISBN}}.01.MZZZZZZZ.jpg"
+                    alt="{{book.title}}">
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card-actions align='center'>
+        <button mat-button >Adicionar ao Carrinho</button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,18 @@
+.footer{
+    height: 40px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: #ffdd00;
+   
+}
+.beforeFooter{
+    height: 30px;
+    width: 100%;
+    background-color: #ffdd00;
+    text-align: center;
+    color: black;
+    margin-bottom: -21px;
+}
