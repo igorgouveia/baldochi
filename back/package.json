@@ -1,0 +1,30 @@
+{
+    "name": "trabalho_final",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ./bin/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IgorGregorio420/trabalho_baldochi_back.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/IgorGregorio420/trabalho_baldochi_back/issues"
+    },
+    "homepage": "https://github.com/IgorGregorio420/trabalho_baldochi_back#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "mysql": "^2.17.1"
+    },
+    "bin": {
+        "trabalho_final": "server.js"
+    },
+    "devDependencies": {},
+    "keywords": [],
+    "description": ""
+}
